@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  # Name of the first container
+  web:
+    # Build the image from the current directory (.) and the Dockerfile file
+    build: .
+    # Define ports to expose (optional)
+    ports:
+      - "80:80"  # Expose container port 80 to host port 80
+
+  # Name of the second container
+  database:
+    # Build the image from a different directory (database) and the Dockerfile file
+    build: ./database
+    # Define environment variables (optional)
+    environment:
+      - DB_NAME=mydatabase
